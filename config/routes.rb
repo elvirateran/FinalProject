@@ -1,14 +1,11 @@
 FinalProject::Application.routes.draw do
-  get "pages/home"
+  match '/home', :to => 'pages#home'
+    match '/profile',   :to => 'pages#profile'
+    match '/contacts',    :to => 'pages#contacts'
+    match '/calendar', :to => 'pages#calendar'
+      match '/discussions',   :to => 'pages#discussions'
+     # match '/',    :to => 'pages#about'
 
-  get "pages/profile"
-
-  get "pages/contacts"
-
-  get "pages/calendar"
-
-  get "pages/discussions"
-
-  get "pages/about"
+     root :to => "pages#about"
 
 end

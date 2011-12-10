@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   end
 
   def profile
-    @title = "My Profile"
+    @title = "Profile"
   end
 
   def contacts
