@@ -10,6 +10,9 @@
 		<div id="logo">
 			<h1><a href="#">[Welcome Back, Username] </a></h1>
 		</div>
+		
+
+
 	</div>
 	<div id="menu">
 		<ul>
@@ -18,17 +21,21 @@
 	      <li><%= link_to "Contacts", contacts_path %></li>
 	      <li><%= link_to "Calendar", calendar_path %></li>
 	      <li><%= link_to "Discussions", discussions_path %></li>
-	      <li><%= link_to "About", root_path %></li>
+
 		</ul>
 	</div>
 
 
 	<div id="page">
     <%= yield %>
+
+		      
 	</div>
 	
   </body>
 <div id="footer">
 	<p>Copyright (c) 2011 www.something.com. All rights reserved.</p>
 </div>
+<%= debug(params) if Rails.env.development? %>
+
 </html>
