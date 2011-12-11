@@ -73,6 +73,7 @@ describe "POST 'create'" do
       response.should render_template('new')
     end
   end
+  
   describe "success" do
   
     before(:each) do
@@ -90,6 +91,11 @@ describe "POST 'create'" do
       post :create, :user => @attr
       response.should redirect_to(user_path(assigns(:user)))
     end    
+    
+    it "should sign the user in" do
+       post :create, :user => @attr
+       controller.should be_signed_in
+     end
     
 
   end
