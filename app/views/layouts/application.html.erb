@@ -2,51 +2,46 @@
 <html>
   <head>
     <title><%= title %></title>
-    <%= csrf_meta_tag %>
+ 	<%= javascript_include_tag :defaults %>
 	<%= stylesheet_link_tag 'stylePage', :media => 'screen' %>
-	
+    <%= csrf_meta_tag %>
+</head>
 
+<body>
 
-
-  </head>
-  <body>
-	<div id="header" class="container">
 		<div id="logo">
-			<h1>
-			<% if signed_in? %>
-			<a href="#">[Welcome Back, Username] </a>
-		    <li><%= link_to "Sign out", signout_path, :method => :delete %></li>
+						
+			<% if signed_in? %>	
+			<div id="menu">
+				<ul>
+			      <li><%= link_to "Home", root_path %></li>
+			      <li><%= link_to "Profile", current_user %></li>
+			      <li><%= link_to "Contacts", users_path %></li>
+			      <li><%= link_to "Calendar", calendar_path %></li>
+			      <li><%= link_to "Discussions", discussions_path %></li>
+				  <li><%= link_to "Sign out", signout_path, :method => :delete %></li>
+
+				</ul>
+			</div>
 		    <% else %>
+				<div id="menu">
 		    <li><%= link_to "Sign in", signin_path %></li>
+				</div>
 		    <% end %>
-		</h1>
-		</div>
-		
-
-
 	</div>
-	<div id="menu">
-		<ul>
-	      <li><%= link_to "Home", home_path %></li>
-	      <li><%= link_to "Profile", profile_path %></li>
-	      <li><%= link_to "Contacts", contacts_path %></li>
-	      <li><%= link_to "Calendar", calendar_path %></li>
-	      <li><%= link_to "Discussions", discussions_path %></li>
 
-		</ul>
-	</div>
+
 
 
 	<div id="page">
-    <%= yield %>
-
-		      
+    <%= yield %>		      
 	</div>
 	
-  </body>
+</body>
+
 <div id="footer">
-	<p>Copyright (c) 2011 www.something.com. All rights reserved.</p>
+	<p>Copyright (c) 2011 www.gammaphibeta.com. All rights reserved.</p>
 </div>
-<%= debug(params) if Rails.env.development? %>
 
 </html>
+<%= debug(params) if Rails.env.development? %>

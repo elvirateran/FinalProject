@@ -1,36 +1,24 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<% if signed_in? %>
+  <table class="front" summary="For signed-in users">
+    <tr>
+      <td class="main">
+        <h1 class="micropost">What's up?</h1>
+        <%= render 'shared/micropost_form' %>
+    <%= render 'shared/feed' %>
+      </td>
+      <td class="sidebar round">
+        <%= render 'shared/user_info' %>
+      </td>
+    </tr>
+  </table>
+<% else %>
+  <h1>Sample App</h1>
 
-<head>
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-<title>Gamma Phi Beta | Home </title>
-<link rel="stylesheet" type="text/css" href="stylePage.css" media="screen" />
-</head>
+  <p>
+    This is the home page for the
+    <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
+    sample application.
+  </p>
 
-
-<body>
-
-
-<div id="box1">
-<h1>Upcoming Events:</h1>			
-		
-		<ul>
-		<li>October 30, 2011	Presidential Election, Kyrgzstan</li>
-
-		<li>November 2, 2011	Regional Conference on the Future of Afghanistan, Istanbul</li>
-		<li>November 3, 2011	International Monetary Fund to Release Financial Stability Report</li>
-		<li>November 3, 2011 - November 4, 2011	G20 Summit, Cannes, France</li>
-	
-		</ul>		 
-	</div>
-
-
-
-
-
-
-
-
-</body>
-
-</html>
+  <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+<% end %>
