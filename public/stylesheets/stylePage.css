@@ -37,6 +37,11 @@ a:hover {
 	
 }
 
+#edit {
+		text-align: left;
+	
+}
+
 #logo {
 	margin: 0;
 	padding: 0;
@@ -93,7 +98,7 @@ a:hover {
 	margin: 0px auto ;
 		padding: 0px;
 	
-	background: #000000
+	background: #7B3F00
 }
 
 #menu ul {
@@ -144,7 +149,7 @@ a:hover {
 	height: 650px;
 	margin: 0px auto;
 	padding: 10px 10px 20px 10px;
-	background: #66CCCC;
+	background: #FADADD;
 }
 
 #content {
@@ -217,7 +222,7 @@ td.sidebar {
 	width: 800px;
 	height: 50px;
 	margin: 0px auto 40px auto;
-	background: #D87093;
+	background: #7B3F00;
 }
 
 #footer p {
@@ -230,7 +235,7 @@ td.sidebar {
 }
 
 #footer a {
-	color: #409FFF;
+	color: #7B3F00;
 	text-decoration: none;
 }
 

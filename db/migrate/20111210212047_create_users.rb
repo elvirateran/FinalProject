@@ -8,6 +8,10 @@ class CreateUsers < ActiveRecord::Migration
     end
   end
 
+add_column :users, :birthday, :string
+add_column :users, :phonenumber, :string
+
+
   def self.down
     drop_table :users
   end

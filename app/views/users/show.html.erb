@@ -1,11 +1,16 @@
+	<%= link_to "Edit Profile", edit_user_path(current_user) %>
 <table class="profile" summary="Profile information">
   <tr>
     <td class="main">
       <h1>
         <%= gravatar_for @user %>
         <%= @user.name %>
-  	
-      </h1>
+</h1>
+ <p>E-mail:</p><%= @user.email %>
+ <p>Birthday:</p><%= @user.birthday %>
+ <p>Phone number:</p><%= @user.phone %>
+
+ 
       <% unless @user.microposts.empty? %>
         <table class="microposts" summary="User microposts">
           <%= render @microposts %>
@@ -16,9 +21,10 @@
 
 
     </td>
-    <td class="sidebar round">
-<strong>Microposts</strong> <%= @user.microposts.count %>
-	<%= link_to "Edit Profile", edit_user_path(current_user) %>
-  </td>
+
+
+
+  
   </tr>
 </table>
+
